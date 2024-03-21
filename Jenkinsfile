@@ -41,7 +41,8 @@ pipeline {
                // Deploy your application here
                // This could involve copying files to a server, restarting services, etc.
                sh '''
-                 echo 123 | sudo -S docker run -d -p 8001:8001 todo-dev
+                sudo docker kill b9d7cfc35f14
+                docker run -d -p 8001:8001 todo-dev
                '''
               
            }
